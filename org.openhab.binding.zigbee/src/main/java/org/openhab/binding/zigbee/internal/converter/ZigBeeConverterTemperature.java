@@ -54,7 +54,7 @@ public class ZigBeeConverterTemperature extends ZigBeeBaseChannelConverter imple
                 logger.debug("{}: Failed to bind temperature measurement cluster", endpoint.getIeeeAddress());
             } else {
                 // Configure reporting
-                cluster.setMeasuredValueReporting(1, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
+                cluster.setMeasuredValueReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
             }
         } catch (InterruptedException | ExecutionException e) {
             logger.error("{}: Exception setting reporting ", endpoint.getIeeeAddress(), e);

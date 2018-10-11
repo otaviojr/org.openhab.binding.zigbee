@@ -49,7 +49,7 @@ public class ZigBeeConverterOccupancy extends ZigBeeBaseChannelConverter impleme
         clusterOccupancy.addAttributeListener(this);
 
         // Configure reporting - no faster than once per second - no slower than 10 minutes.
-        clusterOccupancy.setOccupancyReporting(1, REPORTING_PERIOD_DEFAULT_MAX);
+        clusterOccupancy.setOccupancyReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX);
         return true;
     }
 

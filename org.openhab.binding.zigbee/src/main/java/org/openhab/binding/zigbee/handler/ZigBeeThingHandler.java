@@ -439,9 +439,9 @@ public class ZigBeeThingHandler extends BaseThingHandler
             return;
         }
 
-        Runnable commandHandler = new Runnable() {
-            @Override
-            public void run() {
+        //Runnable commandHandler = new Runnable() {
+        //    @Override
+        //    public void run() {
                 try {
                     if (command == RefreshType.REFRESH) {
                         handler.handleRefresh();
@@ -451,9 +451,9 @@ public class ZigBeeThingHandler extends BaseThingHandler
                 } catch (Exception e) {
                     logger.debug("{}: Exception sending command to channel {}", nodeIeeeAddress, channelUID, e);
                 }
-            }
-        };
-        scheduler.schedule(commandHandler, 0, TimeUnit.MILLISECONDS);
+            //}
+        //};
+        //scheduler.schedule(commandHandler, 0, TimeUnit.MILLISECONDS);
     }
 
     /**

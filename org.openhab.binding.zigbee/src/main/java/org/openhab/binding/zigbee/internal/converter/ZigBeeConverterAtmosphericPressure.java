@@ -71,9 +71,9 @@ public class ZigBeeConverterAtmosphericPressure extends ZigBeeBaseChannelConvert
 
         // Configure reporting - no faster than once per second - no slower than 10 minutes.
         if (enhancedScale != null) {
-            cluster.setScaledValueReporting(1, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
+            cluster.setScaledValueReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
         } else {
-            cluster.setMeasuredValueReporting(1, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
+            cluster.setMeasuredValueReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX, 0.1);
         }
         return true;
     }

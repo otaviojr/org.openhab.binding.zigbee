@@ -65,7 +65,7 @@ public class ZigBeeConverterSwitchLevel extends ZigBeeBaseChannelConverter imple
             if (bindResponse.isSuccess()) {
                 // Configure reporting
                 CommandResult reportingResponse = clusterLevelControl
-                        .setCurrentLevelReporting(1, REPORTING_PERIOD_DEFAULT_MAX, 1).get();
+                        .setCurrentLevelReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX, 1).get();
                 if (reportingResponse.isError()) {
                     pollingPeriod = POLLING_PERIOD_HIGH;
                 }
@@ -84,7 +84,7 @@ public class ZigBeeConverterSwitchLevel extends ZigBeeBaseChannelConverter imple
                 if (bindResponse.isSuccess()) {
                     // Configure reporting
                     CommandResult reportingResponse = clusterOnOffServer
-                            .setOnOffReporting(1, REPORTING_PERIOD_DEFAULT_MAX).get();
+                            .setOnOffReporting(REPORTING_PERIOD_DEFAULT_MIN, REPORTING_PERIOD_DEFAULT_MAX).get();
                     if (reportingResponse.isError()) {
                         pollingPeriod = POLLING_PERIOD_HIGH;
                     }
