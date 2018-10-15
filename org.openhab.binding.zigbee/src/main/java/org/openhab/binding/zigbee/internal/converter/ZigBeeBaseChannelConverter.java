@@ -84,7 +84,7 @@ public abstract class ZigBeeBaseChannelConverter {
     /**
      * Default maximum reporting period
      */
-    protected final int REPORTING_PERIOD_DEFAULT_MIN = 60;
+    protected final int REPORTING_PERIOD_DEFAULT_MIN = 240;
     
     /**
      * Default polling period (in seconds).

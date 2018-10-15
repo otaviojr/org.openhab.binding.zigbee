@@ -65,7 +65,7 @@ public abstract class ZigBeeConverterIas extends ZigBeeBaseChannelConverter impl
 
         // Configure reporting - no faster than once per second - no slower than 10 minutes.
         ZclAttribute attribute = clusterIasZone.getAttribute(ZclIasZoneCluster.ATTR_ZONESTATUS);
-        clusterIasZone.setReporting(attribute, 3, REPORTING_PERIOD_DEFAULT_MAX);
+        clusterIasZone.setReporting(attribute, REPORTING_PERIOD_DEFAULT_MIN/2, REPORTING_PERIOD_DEFAULT_MAX);
         return true;
     }
 
